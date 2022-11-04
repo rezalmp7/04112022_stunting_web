@@ -1,0 +1,30 @@
+#detail-pasien-stunting {
+    background-image: url('../images/background-pasien.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.label-home-search {
+    font-size: 12px;
+}
+.submit-search {
+    border: 0px solid transparent;
+    background-color: transparent;
+    right: 5px;
+    z-index: 999;
+}
+.navbar{
+    z-index: 1000;
+}
+
+#artikel_home p {
+    font-size: 12px;
+}
+#artikel_home .writerName {
+    font-size: 10px;
+    color: #888888; 
+}
+#artikel_home ul li {
+    font-size: 10px;
+    color: #888888;
+}

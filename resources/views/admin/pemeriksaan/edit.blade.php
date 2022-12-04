@@ -41,11 +41,35 @@
                                         <input type="text" name="namaDokter" value="{{ $pemeriksaan->namaDokter }}" class="form-control">
                                     </div>
                                     <div class="my-3">
-                                        <label for="basiInput" class="form-label">Deskripsi</label>
-                                        <textarea name="description" class="form-control" cols="30" rows="10">{{ $pemeriksaan->description }}</textarea>
+                                        <label for="basiInput" class="form-label">Tinggi Badan</label>
+                                        <input type="text" name="tinggi_badan" step="0.01" value="{{ $pemeriksaan->tinggi_badan }}" class="form-control" required>
                                     </div>
                                     <div class="my-3">
-                                        <button class="btn btn-sm btn-success float-end"><i class=" ri-user-add-line"></i> Tambah</button>
+                                        <label for="basiInput" class="form-label">Berat Badan</label>
+                                        <input type="text" name="berat_badan" step="0.01" value="{{ $pemeriksaan->berat_badan }}" class="form-control" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Lingkar Kepala</label>
+                                        <input type="text" name="lingkar_kepala" step="0.01" value="{{ $pemeriksaan->lingkar_kepala }}" class="form-control" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Lingkar Badan</label>
+                                        <input type="text" name="lingkar_badan" step="0.01" value="{{ $pemeriksaan->lingkar_badan }}" class="form-control" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Kategori</label>
+                                        <select class="form-select" name="kategori">
+                                            <option>-- Kategori --</option>
+                                            <option @if($pemeriksaan->kategori == "sehat") selected @endif value="sehat">Sehat</option>
+                                            <option @if($pemeriksaan->kategori == "kurang gizi") selected @endif value="kurang gizi">Kurang Gizi</option>
+                                        </select>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Catatan</label>
+                                        <textarea name="catatan" class="form-control" cols="30" rows="10" required>{{ $pemeriksaan->catatan }}</textarea>
+                                    </div>
+                                    <div class="my-3">
+                                        <button type="submit" class="btn btn-sm btn-warning float-end"><i class=" ri-user-add-line"></i> Edit</button>
                                     </div>
                                 </form>
                             </div>

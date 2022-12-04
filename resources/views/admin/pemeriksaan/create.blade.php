@@ -40,8 +40,32 @@
                                         <input type="text" name="namaDokter" class="form-control" required>
                                     </div>
                                     <div class="my-3">
-                                        <label for="basiInput" class="form-label">Deskripsi</label>
-                                        <textarea name="description" class="form-control" cols="30" rows="10" required></textarea>
+                                        <label for="basiInput" class="form-label">Tinggi Badan</label>
+                                        <input type="text" name="tinggi_badan" step="0.01" class="form-control" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Berat Badan</label>
+                                        <input type="text" name="berat_badan" step="0.01" class="form-control" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Lingkar Kepala</label>
+                                        <input type="text" name="lingkar_kepala" step="0.01" class="form-control" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Lingkar Badan</label>
+                                        <input type="text" name="lingkar_badan" step="0.01" class="form-control" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Kategori</label>
+                                        <select class="form-select" name="kategori">
+                                            <option selected>-- Kategori --</option>
+                                            <option value="sehat">Sehat</option>
+                                            <option value="kurang gizi">Kurang Gizi</option>
+                                        </select>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Catatan</label>
+                                        <textarea name="catatan" class="form-control" cols="30" rows="10" required></textarea>
                                     </div>
                                     <div class="my-3">
                                         <button class="btn btn-sm btn-success float-end"><i class=" ri-user-add-line"></i> Tambah</button>

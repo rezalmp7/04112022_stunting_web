@@ -123,6 +123,6 @@ class AdminController extends Controller
     {
         user::find($id)->delete();
 
-        return redirect(url('/admin/admin'))->with('msgSuccess', 'Admin Berhasil Ditambahkan');
+        return redirect(url('/admin/admin'))->with('msgSuccess', 'user Admin Berhasil Dihapus');
     }
 }

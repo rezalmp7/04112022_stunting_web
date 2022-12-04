@@ -44,10 +44,14 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($pasien as $item => $value)
+                                        @php
+                                            $birthDate = new DateTime($value->tglLahir);
+	                                        $today = new DateTime("today");   
+                                        @endphp
                                         <tr>
                                             <td>{{ $item+1 }}</td>
                                             <td>{{ $value->nama }}  </td>
-                                            <td>{{ $value->umur }} Thn</td>
+                                            <td>{{ $today->diff($birthDate)->y }} Thn {{ $today->diff($birthDate)->m }} Bulan</td>
                                             <td>{{ $value->alamat }}  </td>
                                             <td>
                                                 <div class="dropdown d-inline-block">

@@ -14,9 +14,10 @@ class ArtikelController extends Controller
      */
     public function index()
     {
+        $page = array('page' => "artikel");
         $artikel = artikel::all();
         
-        return view('admin/artikel/index', compact('artikel'));
+        return view('admin/artikel/index', compact('artikel', 'page'));
     }
 
     /**

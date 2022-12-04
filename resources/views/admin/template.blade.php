@@ -85,6 +85,9 @@
             }
         })
         </script>
+        @php
+            Session::forget('msgSuccess');
+        @endphp
     @endif    
     @if(Session::has('msgFailed'))
         @php
@@ -108,7 +111,10 @@
             }
         })
         </script>
-    @endif    
+        @php
+            Session::forget('msgFailed');
+        @endphp
+    @endif
     <!-- Begin page -->
     <div id="layout-wrapper">
 
@@ -123,7 +129,7 @@
                                     <img src="{{ url('/') }}/assets/images/logo-sm.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ url('/') }}/assets/images/logo-dark.png" alt="" height="17">
+                                    <img src="{{ url('/') }}/assets/images/logo posyandu peleburan.png" alt="" height="17">
                                 </span>
                             </a>
 
@@ -132,7 +138,7 @@
                                     <img src="{{ url('/') }}/assets/images/logo-sm.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{ url('/') }}/assets/images/logo-light.png" alt="" height="17">
+                                    <img src="{{ url('/') }}/assets/images/logo posyandu peleburan.png" alt="" height="17">
                                 </span>
                             </a>
                         </div>
@@ -192,21 +198,21 @@
             <!-- LOGO -->
             <div class="navbar-brand-box">
                 <!-- Dark Logo-->
-                <a href="index.html" class="logo logo-dark">
+                <a href="{{ url('/') }}/admin/dashboard" class="logo logo-dark">
                     <span class="logo-sm">
                         <img src="{{ url('/') }}/assets/images/logo-sm.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ url('/') }}/assets/images/logo-dark.png" alt="" height="17">
+                        <img src="{{ url('/') }}/assets/images/logo posyandu peleburan.png" alt="" class="col-12">
                     </span>
                 </a>
                 <!-- Light Logo-->
-                <a href="index.html" class="logo logo-light">
+                <a href="{{ url('/') }}/admin/dashboard" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{ url('/') }}/assets/images/logo-sm.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ url('/') }}/assets/images/logo-light.png" alt="" height="17">
+                        <img src="{{ url('/') }}/assets/images/logo posyandu peleburan.png" alt="" class="col-12">
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -261,11 +267,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © Velzon.
+                            <script>document.write(new Date().getFullYear())</script> © Development By Reza Upgris
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Design & Develop by Themesbrand
+                                Development By Reza Upgris
                             </div>
                         </div>
                     </div>

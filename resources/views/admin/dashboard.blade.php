@@ -37,7 +37,6 @@
                                                     <div>
                                                         <p class="fw-medium text-muted mb-0">Pasien Hari Ini</p>
                                                         <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="{{ $countPemeriksaan }}">0</span></h2>
-                                                        <p class="mb-0 text-muted"><span class="badge bg-light text-success mb-0"> <i class="ri-arrow-up-line align-middle"></i> 16.24 % </span> vs. previous month</p>
                                                     </div>
                                                     <div>
                                                         <div class="avatar-sm flex-shrink-0">
@@ -58,7 +57,6 @@
                                                     <div>
                                                         <p class="fw-medium text-muted mb-0">Kurang Gizi Hari Ini</p>
                                                         <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="{{ $countPemeriksaanKurangSehat }}">0</span></h2>
-                                                        <p class="mb-0 text-muted"><span class="badge bg-light text-danger mb-0"> <i class="ri-arrow-down-line align-middle"></i> 3.96 % </span> vs. previous month</p>
                                                     </div>
                                                     <div>
                                                         <div class="avatar-sm flex-shrink-0">

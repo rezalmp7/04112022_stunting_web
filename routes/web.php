@@ -9,6 +9,8 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\PemeriksaanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArtikelHomeController;
+use App\Http\Controllers\PencarianController;
+use App\Http\Controllers\StuntingHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,11 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/artikel', [ArtikelHomeController::class, 'index']);
 Route::get('/artikel/show/{id}', [ArtikelHomeController::class, 'show']);
+
+Route::get('/dataSunting', [StuntingHomeController::class, 'index']);
+
+Route::get('/pencarian', [PencarianController::class, 'index']);
+Route::get('/pencarian/{id}/detail', [PencarianController::class, 'show']);
 
 Route::middleware(['loginAdmin'])->group(function () {
     Route::resource('admin/dashboard', DashboardController::class);

@@ -1,42 +1,22 @@
-@extends('admin/template')
+@extends('template')
 
 @section('content')
-    <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
-        <div class="main-content">
-
-            <div class="page-content">
-                <div class="container-fluid">
-
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Detail</h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="{{ url('/') }}/admin/dashboard">Dashboard</a></li>
-                                        <li class="breadcrumb-item"><a href="{{ url('/') }}/admin/pemeriksaan">Pasien</a></li>
-                                        <li class="breadcrumb-item active">Detail</li>
-                                    </ol>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
-                    <div class="col-12">
-                        <div class="col-12 p-3 m-0">
-                            <h3 class="d-inline mt-4 mb-2"><b>Data Diri</b></h3><a href="{{ url('/') }}/admin/pasien/{{ $pasien->id }}/edit" class="text-warning mx-3 fs-4"><i class="ri-edit-circle-fill"></i></a>
+    <!-- start hero section -->
+        <section class="section pb-0 hero-section py-5 my-5 bg-stunting-web" id="hero">
+            <div class="bg-overlay bg-overlay-pattern"></div>
+            <div class="container-fluid p-5 mb-5">
+                <div class="col-12 mt-5">
+                    <div class="col-12 row">
+                        <div class="col-4 p-3 m-0">
+                            <h3 class="d-inline mt-4 mb-2"><b>Data Diri</b></h3>
+                            
+                            @php
+                                $birthDate = new DateTime($pasien->tglLahir);
+                                $today = new DateTime("today");   
+                            @endphp
                             <div class="col-12 m-0 p-3 rounded shadow-lg" id="detail-pasien-stunting">
-                                
-                                @php
-                                    $birthDate = new DateTime($pasien->tglLahir);
-                                    $today = new DateTime("today");   
-                                @endphp
-                                <table class="table table-borderless table-sm">
+                                <table class="table fs-6 table-borderless table-sm">
+                                    
                                     <tr>
                                         <td>Nama</td>
                                         <td>:</td>
@@ -75,10 +55,10 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="col-12 p-3 m-0">
-                            <div class="card rounded-4">
-                                <div class="card-header">
-                                    <h3 class="d-inline mt-4 mb-2"><b>Daftar Pemeriksaan</b></h3><a href="{{ url('/') }}/admin/pemeriksaan/{{ $pasien->id }}/create" class="text-success mx-3 fs-4"><i class="ri-heart-add-fill"></i></a>
+                        <div class="col-8 p-3 m-0">
+                            <div class="card rounded-4 bg-transparent">
+                                <div class="card-header bg-transparent">
+                                    <h3 class="d-inline mt-4 mb-2"><b>Daftar Pemeriksaan</b></h3>
                                 </div>
                                 <div class="card-body">
                                     <div class="col-12 m-0 p-3">
@@ -90,18 +70,14 @@
                                                 <input type="text" name="filter" class="form-control form-control-sm" placeholder="filter" id="filter">
                                                 @endif
                                                 <button class="btn btn-primary btn-sm" type="submit" id="button-addon2">Filter</button>
-                                                <a class="btn btn-danger btn-sm" href="{{ url('/') }}/admin/pasien/{{ $pasien->id }}/show" id="button-addon2">Clear</a>
+                                                <a class="btn btn-danger btn-sm" href="{{ url('/') }}/pencarian/{{ $pasien->id }}/detail" id="button-addon2">Clear</a>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="col-12 m-0 p-0" style="height: 500px; overflow-y: scroll; overflow-x: hidden;">
                                         @foreach ($pemeriksaan as $value)
-                                        <div class="col-12 my-3 p-3 shadow-lg rounded-4">
+                                        <div class="col-12 my-3 p-3 shadow-lg bg-light rounded-4">
                                             <div class="row">
-                                                <div class="col-auto">
-                                                    <a href="{{ url('/') }}/admin/pemeriksaan/{{ $value->id }}/edit" class="text-warning fs-4"><i class="ri-edit-circle-fill"></i></a>
-                                                    <a href="{{ url('/') }}/admin/pemeriksaan/{{ $value->id }}/destroy" onclick="return confirm('Ingin menghapus diagnosa ini?');" class="text-danger fs-4"><i class="ri-delete-bin-fill"></i></a>
-                                                </div>
                                                 <div class="col">
                                                     <div class="m-0 p-0" style="color: grey; font-size: 12px;">{{ date('d/m/Y', strtotime($value->created_at)) }}</div>
                                                     <div class="m-0 p-0" style="color: rgb(94, 94, 94); font-size: 12px;">{{ $value->namaDokter }}</div>
@@ -113,6 +89,9 @@
                                                             <td class="p-0"><b>Lingkar Badan : </b> {{ $value->lingkar_badan }}</td>
                                                         </tr>
                                                     </table>
+                                                    <p class="fs-6">
+                                                        <b>Noted</b>: {{$value->catatan}}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,14 +102,27 @@
                         </div>
                     </div>
                 </div>
-                <!-- container-fluid -->
+                <div class="col-12 m-0">
+                </div>
             </div>
-            <!-- End Page-content -->
-            <script>
-                $("#filter").flatpickr(
-                    {
-                        mode: "range"
-                    }
-                );
-            </script>
+            <!-- end container -->
+            <div class="position-absolute start-0 end-0 bottom-0 hero-shape-svg">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
+                    <g mask="url(&quot;#SvgjsMask1003&quot;)" fill="none">
+                        <path d="M 0,118 C 288,98.6 1152,40.4 1440,21L1440 140L0 140z">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+            <!-- end shape -->
+        </section>
+        <!-- end hero section -->
+
+        <script>
+            $("#filter").flatpickr(
+                {
+                    mode: "range"
+                }
+            );
+        </script>
 @endsection

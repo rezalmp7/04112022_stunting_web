@@ -40,8 +40,20 @@
                                         <input type="text" name="nama" class="form-control" value="{{ $pasien->nama }}" required>
                                     </div>
                                     <div class="my-3">
-                                        <label for="basiInput" class="form-label">Umur</label>
-                                        <input type="number" name="umur" class="form-control" value="{{ $pasien->umur }}" required>
+                                        <label for="basiInput" class="form-label">NIK</label>
+                                        <input type="number" name="nik" class="form-control" value="{{ $pasien->nik }}" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">KK</label>
+                                        <input type="number" name="kk" class="form-control" value="{{ $pasien->kk }}" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Jenis Kelamin</label>
+                                        <select class="form-select" name="jenis_kelamin">
+                                            <option>-- Jenis Kelamin --</option>
+                                            <option @if($pasien->jenis_kelamin == 1) selected @endif value="1">Laki - laki</option>
+                                            <option @if($pasien->jenis_kelamin == 2) selected @endif value="2">Perempuan</option>
+                                        </select>
                                     </div>
                                     <div class="my-3">
                                         <label for="basiInput" class="form-label">Alamat</label>

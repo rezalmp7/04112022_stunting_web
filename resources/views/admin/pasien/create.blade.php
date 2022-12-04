@@ -40,8 +40,20 @@
                                         <input type="text" name="nama" class="form-control" required>
                                     </div>
                                     <div class="my-3">
-                                        <label for="basiInput" class="form-label">Umur</label>
-                                        <input type="number" name="umur" class="form-control" required>
+                                        <label for="basiInput" class="form-label">NIK</label>
+                                        <input type="number" name="nik" class="form-control" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">KK</label>
+                                        <input type="number" name="kk" class="form-control" required>
+                                    </div>
+                                    <div class="my-3">
+                                        <label for="basiInput" class="form-label">Jenis Kelamin</label>
+                                        <select class="form-select" name="jenis_kelamin">
+                                            <option selected>-- Jenis Kelamin --</option>
+                                            <option value="1">Laki - laki</option>
+                                            <option value="2">Perempuan</option>
+                                        </select>
                                     </div>
                                     <div class="my-3">
                                         <label for="basiInput" class="form-label">Alamat</label>

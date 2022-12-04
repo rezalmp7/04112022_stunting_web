@@ -2,13 +2,13 @@
 
 @section('content')
     <!-- start hero section -->
-        <section class="section pb-0 hero-section py-5 my-5" id="hero">
+        <section class="section pb-0 hero-section py-5 my-5 bg-stunting-web" id="hero">
             <div class="bg-overlay bg-overlay-pattern"></div>
             <div class="container pb-5 mb-5">
                 <div class="col-12 mt-5">
-                    <form class="col-12 m-0 p-0">
+                    <form class="col-12 m-0 p-0" method="GET" action="{{url('/')}}/pencarian">
                         <div class="input-group mb-3 position-relative">
-                            <input type="text" class="form-control rounded-pill" placeholder="Search data Anda" aria-describedby="button">
+                            <input type="text" class="form-control rounded-pill" name="search" placeholder="Search data Anda" aria-describedby="button">
                             <button class="submit-search top-50 position-absolute translate-middle" type="submit" id="button"><i class="ri-search-2-line"></i></button>
                         </div>
                     </form>

@@ -26,6 +26,7 @@
     <link href="{{ url('/') }}/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ url('/') }}/assets/css/stunting-style.css" rel="stylesheet" type="text/css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
         body {
             background-color: transparent;
@@ -37,6 +38,9 @@
         }
 
     </style>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar-example">
@@ -56,19 +60,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('/') }}/home">Home</a>
+                            <a class="nav-link @if($page["page"] == "home") active @endif" href="{{ url('/') }}/home" >Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}/artikel">Artikel</a>
+                            <a class="nav-link @if($page["page"] == "artikel") active @endif" href="{{ url('/') }}/artikel" >Artikel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}/pencarian">Pencarian</a>
+                            <a class="nav-link @if($page["page"] == "data") active @endif" href="{{ url('/') }}/dataSunting" >Data Stunting</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @if($page["page"] == "pencarian") active @endif" href="{{ url('/') }}/pencarian" >Pencarian</a>
                         </li>
                     </ul>
 
                     <div class="">
-                        <a href="auth-signin-basic.html" class="btn btn-link fw-medium text-decoration-none text-dark">Sign in</a>
-                        <a href="auth-signup-basic.html" class="btn btn-primary">Sign Up</a>
+                        <a href="auth-signin-basic.html" class="btn btn-link fw-medium text-decoration-none text-dark"></a>
+                        <a href="{{ url('/') }}/login" class="btn btn-primary">Sign in</a>
                     </div>
                 </div>
 
@@ -79,17 +86,17 @@
         @yield('content')
 
         <!-- Start footer -->
-        <footer class="custom-footer bg-dark py-5 position-relative">
+        <footer class="custom-footer text-body py-5 position-relative">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mt-4">
                         <div>
                             <div>
-                                <img src="assets/images/logo-light.png" alt="logo light" height="17">
+                                <img src="{{ url('/') }}/assets/images/logo-dark.png" alt="logo light" height="17">
                             </div>
                             <div class="mt-4 fs-13">
-                                <p>POSYANDU Kelurahan Sambiroto </p>
-                                <p class="ff-secondary">Jl. Merdeka 01, semarang Jawa Tengah.</p>
+                                <p>POSYANDU Kelurahan Pleburan </p>
+                                <p class="ff-secondary">Jalan Kartanegara Selatan II No.11, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50241</p>
                             </div>
                         </div>
                     </div>
@@ -98,8 +105,8 @@
                         <h5 class="text-white mb-0">Contact</h5>
                         <div class="text-muted mt-3">
                             <ul class="list-unstyled ff-secondary footer-list">
-                                <li><i class="ri-building-2-fill"></i> Jl. Merdeka 01</li>
-                                <li><i class="ri-phone-fill"></i> 08812312312</li>
+                                <li><i class="ri-building-2-fill"></i> Jalan Kartanegara Selatan II No.11, Pleburan, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50241</li>
+                                {{-- <li><i class="ri-phone-fill"></i> 08812312312</li> --}}
                             </ul>
                         </div>
                     </div>
@@ -110,7 +117,7 @@
                     <div class="col-sm-6">
                         <div>
                             <p class="copy-rights mb-0">
-                                <script> document.write(new Date().getFullYear()) </script> © Posyandu - Stunting Website
+                                2022 - <script> document.write(new Date().getFullYear()) </script> © Development By Reza Upgris
                             </p>
                         </div>
                     </div>

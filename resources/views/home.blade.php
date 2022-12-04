@@ -9,14 +9,14 @@
                     <div class="row justify-content-center">
                         <img class="col-sm-8 col-md-4 col-lg-2 col-10" src="{{ url('/') }}/assets/images/logo-sm.png">
                         <h1 class="col-12 m-0 text-center">
-                            <b>SISTEM INFORMASI STUNTING KELURAHAN SAMBIROTO</b>
+                            <b>SISTEM INFORMASI STUNTING KELURAHAN PLEBURAN</b>
                         </h1>
                         <div class="col-12 mt-5 pt-5 text-center label-home-search">
                             <b>Cari Data Anda</b>
                         </div>
-                        <form class="col-12 m-0 p-0">
+                        <form class="col-12 m-0 p-0" method="GET" action="{{url('/')}}/pencarian">
                             <div class="input-group mb-3 position-relative">
-                                <input type="text" class="form-control rounded-pill" placeholder="Search data Anda" aria-describedby="button">
+                                <input type="text" class="form-control rounded-pill" name="search" placeholder="Search data Anda" aria-describedby="button">
                                 <button class="submit-search top-50 position-absolute translate-middle" type="submit" id="button"><i class="ri-search-2-line"></i></button>
                             </div>
                         </form>

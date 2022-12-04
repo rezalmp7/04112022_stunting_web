@@ -13,11 +13,13 @@ class Pasien extends Model
 
     protected $fillable = [
         'nama',
-        'umur',
+        'nik',
+        'kk',
+        'tglLahir',
+        'tmpLahir',
+        'jenis_kelamin',
         'alamat',
         'orangTua',
-        'tglLahir',
-        'tmpLahir'
     ];
     
     public function pemeriksaans() {

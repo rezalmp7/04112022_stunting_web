@@ -47,13 +47,23 @@ class PemeriksaanController extends Controller
     {
         $request->validate([
             'namaDokter' => 'required|string',
-            'description' => 'required|string'
+            'tinggi_badan' => 'required',
+            'berat_badan' => 'required',
+            'lingkar_kepala' => 'required',
+            'lingkar_badan' => 'required',
+            'kategori' => 'required|string',
+            'catatan' => 'required|string'
         ]);
 
         $dataStore = array(
             'pasien_id' => $id,
             'namaDokter' => $request->namaDokter,
-            'description' => $request->description,
+            'tinggi_badan' => $request->tinggi_badan,
+            'berat_badan' => $request->berat_badan,
+            'lingkar_kepala' => $request->lingkar_kepala,
+            'lingkar_badan' => $request->lingkar_badan,
+            'kategori' => $request->kategori,
+            'catatan' => $request->catatan,
             'created_by' => Auth()->user()->name
         );
 
@@ -65,19 +75,23 @@ class PemeriksaanController extends Controller
     {
         $request->validate([
             'nama' => 'required|string',
-            'umur' => 'required|integer',
-            'alamat' => 'required|string',
+            'nik' => 'required|string',
+            'kk' => 'required|string',
             'tmpLahir' => 'required|string',
             'tglLahir' => 'required|date',
+            'jenis_kelamin' => 'required|string',
+            'alamat' => 'required|string',
             'orangTua' => 'required|string'
         ]);
 
         $dataStore = array(
             'nama' => $request->nama,
-            'umur' => $request->umur,
-            'alamat' => $request->alamat,
+            'nik' => $request->nik,
+            'kk' => $request->kk,
             'tmpLahir' => $request->tmpLahir,
             'tglLahir' => $request->tglLahir,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'alamat' => $request->alamat,
             'orangTua' => $request->orangTua 
         );
 
@@ -110,7 +124,7 @@ class PemeriksaanController extends Controller
         } else {
             $pemeriksaan = pemeriksaan::where('pasien_id', $id)->orderBy('created_at', 'DESC')->get();
         }
-
+        
         return view('admin/pasien/show', compact('pasien', 'pemeriksaan', 'filter'));
     }
 
@@ -147,17 +161,27 @@ class PemeriksaanController extends Controller
 
         $request->validate([
             'namaDokter' => 'required|string',
-            'description' => 'required|string'
+            'tinggi_badan' => 'required',
+            'berat_badan' => 'required',
+            'lingkar_kepala' => 'required',
+            'lingkar_badan' => 'required',
+            'kategori' => 'required|string',
+            'catatan' => 'required|string'
         ]);
 
         $dataUpdate = array(
+            'pasien_id' => $pemeriksaan->pasien_id,
             'namaDokter' => $request->namaDokter,
-            'description' => $request->description,
+            'tinggi_badan' => $request->tinggi_badan,
+            'berat_badan' => $request->berat_badan,
+            'lingkar_kepala' => $request->lingkar_kepala,
+            'lingkar_badan' => $request->lingkar_badan,
+            'kategori' => $request->kategori,
+            'catatan' => $request->catatan,
             'created_by' => Auth()->user()->name 
         );
-
-        pemeriksaan::find($id)->update($dataUpdate);
-
+        $update = pemeriksaan::find($id)->update($dataUpdate);
+        
         return redirect(url('admin/pasien/'.$pasien->id.'/show'))->with('msgSuccess', 'Pemeriksaan Berhasil terupdate');
     }
     public function updatePasien(Request $request, $id)
@@ -166,19 +190,23 @@ class PemeriksaanController extends Controller
 
         $request->validate([
             'nama' => 'required|string',
-            'umur' => 'required|integer',
-            'alamat' => 'required|string',
+            'nik' => 'required|string',
+            'kk' => 'required|string',
+            'jenis_kelamin' => 'required|string',
             'tmpLahir' => 'required|string',
             'tglLahir' => 'required|date',
+            'alamat' => 'required|string',
             'orangTua' => 'required|string'
         ]);
 
         $dataUpdate = array(
             'nama' => $request->nama,
-            'umur' => $request->umur,
-            'alamat' => $request->alamat,
+            'nik' => $request->nik,
+            'kk' => $request->kk,
             'tmpLahir' => $request->tmpLahir,
             'tglLahir' => $request->tglLahir,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'alamat' => $request->alamat,
             'orangTua' => $request->orangTua 
         );
 

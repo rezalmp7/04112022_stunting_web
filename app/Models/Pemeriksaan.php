@@ -13,8 +13,13 @@ class Pemeriksaan extends Model
 
     protected $fillable = [
         'pasien_id',
-        'description',
         'namaDokter',
+        'tinggi_badan',
+        'berat_badan',
+        'lingkar_kepala',
+        'lingkar_badan',
+        'kategori',
+        'catatan',
         'created_by'
     ];
 

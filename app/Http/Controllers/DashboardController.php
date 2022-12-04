@@ -13,7 +13,7 @@ class DashboardController extends Controller
     public function index() {
         $today = date('Y-m-d');
         $pemeriksaan = pemeriksaan::select('pasien_id')->whereBetween('created_at', [$today.' 00:00:00', $today.' 23:59:59'])->get();
-        $pemeriksaan_kurang_sehat = pemeriksaan::select('pasien_id')->whereBetween('created_at', [$today.' 00:00:00', $today.' 23:59:59'])->where('description', 'Kurang Gizi')->get();
+        $pemeriksaan_kurang_sehat = pemeriksaan::select('pasien_id')->whereBetween('created_at', [$today.' 00:00:00', $today.' 23:59:59'])->where('kategori', 'kurang gizi')->get();
 
         $pasien = pasien::all();
 
@@ -29,7 +29,7 @@ class DashboardController extends Controller
             $pemeriksaan_all_eloquent = pemeriksaan::select('pasien_id')->whereBetween('created_at', [$day.' 00:00:00', $day.' 23:59:59'])->get();
             $pemeriksaan_all = $pemeriksaan_all_eloquent->groupBy('pasien_id')->count();
 
-            $pemeriksaan_kurang_gizi_eloquent = pemeriksaan::select('pasien_id')->whereBetween('created_at', [$day.' 00:00:00', $day.' 23:59:59'])->where('description', 'Kurang Gizi')->get();
+            $pemeriksaan_kurang_gizi_eloquent = pemeriksaan::select('pasien_id')->whereBetween('created_at', [$day.' 00:00:00', $day.' 23:59:59'])->where('kategori', 'kurang gizi')->get();
             $pemeriksaan_kurang_gizi = $pemeriksaan_kurang_gizi_eloquent->groupBy('pasien_id')->count();
 
             array_push($pemeriksaan_all_array, $pemeriksaan_all);

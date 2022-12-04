@@ -45,10 +45,10 @@
                                     </div>
                                     <div class="my-3">
                                         <label for="basiInput" class="form-label">Isi</label>
-                                        <textarea name="isi" id="ckeditor" class="ckeditor form-control" cols="30" rows="10" required></textarea>
+                                        <textarea name="isi" id="ckeditor" class="ckeditor form-control" cols="30" rows="10"></textarea>
                                     </div>
                                     <div class="my-3">
-                                        <button class="btn btn-sm btn-success float-end"><i class=" ri-user-add-line"></i> Tambah</button>
+                                        <button type="submit" class="btn btn-sm btn-success float-end"><i class=" ri-user-add-line"></i> Tambah</button>
                                     </div>
                                 </form>
                             </div>

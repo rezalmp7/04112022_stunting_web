@@ -267,12 +267,9 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © Development By Reza Upgris
+                            <script>document.write(new Date().getFullYear())</script> © Developer By Reza Aditya Pratama Informatika Upgris
                         </div>
                         <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Development By Reza Upgris
-                            </div>
                         </div>
                     </div>
                 </div>

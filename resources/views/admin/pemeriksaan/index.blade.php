@@ -60,7 +60,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-menu-end">
                                                         <li><a href="{{ url('/') }}/admin/pasien/{{ $value->id }}/show" class="dropdown-item"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View</a></li>
-                                                        <li><a href="{{ url('/') }}/admin/pasien/{{ $value->id }}/show" class="dropdown-item"><i class="ri-heart-2-line align-bottom me-2 text-muted"></i> Periksan</a></li>
+                                                        <li><a href="{{ url('/') }}/admin/pemeriksaan/{{ $value->id }}/create" class="dropdown-item"><i class="ri-heart-add-fill align-bottom me-2 text-muted"></i> Tambah Periksan</a></li>
                                                         <li><a href="{{ url('/') }}/admin/pasien/{{ $value->id }}/edit" class="dropdown-item edit-item-btn"><i class="ri-pencil-fill align-bottom me-2 text-muted"></i> Edit</a></li>
                                                         <li>
                                                             <a href="{{ url('/') }}/admin/pasien/{{ $value->id }}/destroy" onclick="return confirm('Ingin menghapus {{ $value->nama }} dari daftar pasien?');" class="dropdown-item remove-item-btn">

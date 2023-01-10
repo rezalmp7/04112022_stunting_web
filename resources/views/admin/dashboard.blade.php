@@ -95,7 +95,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Pasien</h5>
+                                    <h5 class="card-title mb-0">Data Anak</h5>
                                 </div>
                                 <div class="card-body">
                                     <table id="example" class="table dt-responsive nowrap table-striped align-middle" style="width:100%">

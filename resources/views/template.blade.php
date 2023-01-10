@@ -117,7 +117,7 @@
                     <div class="col-sm-6">
                         <div>
                             <p class="copy-rights mb-0">
-                                2022 - <script> document.write(new Date().getFullYear()) </script> © Development By Reza Upgris
+                                <script> document.write(new Date().getFullYear()) </script> © Developer By Reza Aditya Pratama Informatika Upgris
                             </p>
                         </div>
                     </div>

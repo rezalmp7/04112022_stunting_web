@@ -78,7 +78,7 @@
                         <div class="col-12 p-3 m-0">
                             <div class="card rounded-4">
                                 <div class="card-header">
-                                    <h3 class="d-inline mt-4 mb-2"><b>Daftar Pemeriksaan</b></h3><a href="{{ url('/') }}/admin/pemeriksaan/{{ $pasien->id }}/create" class="text-success mx-3 fs-4"><i class="ri-heart-add-fill"></i></a>
+                                    <h3 class="d-inline mt-4 mb-2"><b>Daftar Pemeriksaan</b></h3><a href="{{ url('/') }}/admin/pemeriksaan/{{ $pasien->id }}/create" class="btn btn-success btn-sm mx-3 fs-6"><i class="ri-heart-add-fill"></i> Tambah Pemeriksaan</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="col-12 m-0 p-3">

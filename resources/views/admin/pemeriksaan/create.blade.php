@@ -36,7 +36,7 @@
                                 <form method="POST" action="{{ url('/') }}/admin/pemeriksaan/{{ $pasien->id }}/store">
                                     @csrf
                                     <div class="my-3">
-                                        <label for="basiInput" class="form-label">Nama Dokter</label>
+                                        <label for="basiInput" class="form-label">Nama Petugas</label>
                                         <input type="text" name="namaDokter" class="form-control" required>
                                     </div>
                                     <div class="my-3">

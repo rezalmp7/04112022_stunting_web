@@ -11,7 +11,7 @@
                         <h1 class="col-12 m-0 text-center">
                             <b>SISTEM INFORMASI STUNTING KELURAHAN PLEBURAN</b>
                         </h1>
-                        <div class="col-12 mt-5 pt-5 text-center label-home-search">
+                        {{-- <div class="col-12 mt-5 pt-5 text-center label-home-search">
                             <b>Cari Data Anda</b>
                         </div>
                         <form class="col-12 m-0 p-0" method="GET" action="{{url('/')}}/pencarian">
@@ -19,7 +19,13 @@
                                 <input type="text" class="form-control rounded-pill" name="search" placeholder="Search data Anda" aria-describedby="button">
                                 <button class="submit-search top-50 position-absolute translate-middle" type="submit" id="button"><i class="ri-search-2-line"></i></button>
                             </div>
-                        </form>
+                        </form> --}}
+                        <h2 class="col-12 mt-5 text-center">
+                            Data Stunting
+                        </h2>
+                        <div>
+                            <canvas class="col-12" id="myChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -35,5 +41,54 @@
             <!-- end shape -->
         </section>
         <!-- end hero section -->
+        <script>
+            var data1 = [];
+            var data2 = [];
+            var tanggal = [];
+        </script>
+        @foreach ($pemeriksaan_all_array as $a)
+            <script>
+                data1.push({{ $a }});
+            </script>
+        @endforeach
+        @foreach ($pemeriksaan_kurang_gizi_array as $b)
+            <script>
+                data2.push({{ $b }});
+            </script>
+        @endforeach
+        @foreach ($pemeriksaan_tanggal as $c)
+            <script>
+                tanggal.push('{{ $c }}');
+            </script>
+        @endforeach
+        <script>
+            const ctx = document.getElementById('myChart');
 
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: tanggal,
+                    datasets: [{
+                        label: 'Data Pemeriksaan',
+                        data: data1,
+                        fill: true,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    },{
+                        label: 'Stunting',
+                        data: data2,
+                        fill: true,
+                        borderColor: 'rgb(255, 0, 0)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                scales: {
+                    y: {
+                    beginAtZero: true
+                    }
+                }
+                }
+            });
+        </script>
 @endsection

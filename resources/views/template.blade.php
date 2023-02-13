@@ -25,7 +25,7 @@
     <!-- custom Css-->
     <link href="{{ url('/') }}/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ url('/') }}/assets/css/stunting-style.css" rel="stylesheet" type="text/css" />
-
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
         body {
@@ -41,6 +41,8 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar-example">

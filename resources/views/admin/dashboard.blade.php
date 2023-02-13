@@ -55,7 +55,7 @@
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                        <p class="fw-medium text-muted mb-0">Kurang Gizi Hari Ini</p>
+                                                        <p class="fw-medium text-muted mb-0">Anak Stunting Hari Ini</p>
                                                         <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="{{ $countPemeriksaanKurangSehat }}">0</span></h2>
                                                     </div>
                                                     <div>
@@ -110,10 +110,14 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($pasien as $item => $value)
+                                            @php
+                                                $birthDate = new DateTime($value->tglLahir);
+                                                $today = new DateTime("today");   
+                                            @endphp
                                             <tr>
                                                 <td>{{ $item+1 }}</td>
                                                 <td>{{ $value->nama }}  </td>
-                                                <td>{{ $value->umur }} Thn</td>
+                                                <td>{{ $today->diff($birthDate)->y }} Thn {{ $today->diff($birthDate)->m }} Bulan</td>
                                                 <td>{{ $value->alamat }}  </td>
                                                 <td>
                                                     <div class="dropdown d-inline-block">
@@ -163,11 +167,11 @@
                 var options = {
                     series: [
                         {
-                            name: 'Pasien Periksa',
+                            name: 'Anak Periksa',
                             type: 'column',
                             data: data1
                         }, {
-                            name: 'Pasien Kurang Gizi',
+                            name: 'Anak Stunting',
                             type: 'line',
                             data: data2
                         }

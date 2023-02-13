@@ -16,7 +16,10 @@
                             @endphp
                             <div class="col-12 m-0 p-3 rounded shadow-lg" id="detail-pasien-stunting">
                                 <table class="table fs-6 table-borderless table-sm">
-                                    
+                                    @php
+                                        $nikArray = str_split($pasien->nik);  
+                                        $kkArray = str_split($pasien->kk);  
+                                    @endphp
                                     <tr>
                                         <td>Nama</td>
                                         <td>:</td>
@@ -25,12 +28,12 @@
                                     <tr>
                                         <td>NIK</td>
                                         <td>:</td>
-                                        <td>{{ $pasien->nik }}</td>
+                                        <td>{{ $nikArray[0].$nikArray[1].$nikArray[2]."xxxxxxxxxxxx" }}</td>
                                     </tr>
                                     <tr>
                                         <td>KK</td>
                                         <td>:</td>
-                                        <td>{{ $pasien->kk }}</td>
+                                        <td>{{ $kkArray[0].$kkArray[1].$kkArray[2]."xxxxxxxxxxxx" }}</td>
                                     </tr>
                                     <tr>
                                         <td>Umur Pendaftaran</td>
@@ -76,11 +79,11 @@
                                     </div>
                                     <div class="col-12 m-0 p-0" style="height: 500px; overflow-y: scroll; overflow-x: hidden;">
                                         @foreach ($pemeriksaan as $value)
-                                        <div class="col-12 my-3 p-3 shadow-lg bg-light rounded-4">
+                                        <div class="col-12 my-3 p-3 shadow-lg @if($value->kategori == "sehat") bg-success @else bg-danger @endif rounded-4">
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="m-0 p-0" style="color: grey; font-size: 12px;">{{ date('d/m/Y', strtotime($value->created_at)) }}</div>
-                                                    <div class="m-0 p-0" style="color: rgb(94, 94, 94); font-size: 12px;">{{ $value->namaDokter }}</div>
+                                                    <div class="m-0 p-0" style="color: rgb(0, 0, 0); font-size: 12px;">{{ date('d/m/Y', strtotime($value->created_at)) }}</div>
+                                                    <div class="m-0 p-0" style="color: rgb(0, 0, 0); font-size: 12px;">{{ $value->namaDokter }}</div>
                                                     <table class="table p-0 my-3 table-borderless table-sm">
                                                         <tr>
                                                             <td class="p-0"><b>Tinggi Badan : </b> {{ $value->tinggi_badan }}</td>

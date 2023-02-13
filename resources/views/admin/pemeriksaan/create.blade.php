@@ -60,7 +60,7 @@
                                         <select class="form-select" name="kategori">
                                             <option selected>-- Kategori --</option>
                                             <option value="sehat">Sehat</option>
-                                            <option value="kurang gizi">Kurang Gizi</option>
+                                            <option value="kurang gizi">Stunting</option>
                                         </select>
                                     </div>
                                     <div class="my-3">

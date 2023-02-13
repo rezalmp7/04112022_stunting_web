@@ -61,7 +61,7 @@
                                         <select class="form-select" name="kategori">
                                             <option>-- Kategori --</option>
                                             <option @if($pemeriksaan->kategori == "sehat") selected @endif value="sehat">Sehat</option>
-                                            <option @if($pemeriksaan->kategori == "kurang gizi") selected @endif value="kurang gizi">Kurang Gizi</option>
+                                            <option @if($pemeriksaan->kategori == "kurang gizi") selected @endif value="kurang gizi">Stunting</option>
                                         </select>
                                     </div>
                                     <div class="my-3">

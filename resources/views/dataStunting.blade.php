@@ -29,12 +29,14 @@
                                     @foreach ($pemeriksaan as $a)
                                     @php
                                         $birthDate = new DateTime($a->tglLahir);
-                                        $today = new DateTime("today");   
+                                        $today = new DateTime("today"); 
+                                        $nikArray = str_split($a->nik);  
+                                        $kkArray = str_split($a->kk);  
                                     @endphp
                                     <tr class="fs-6">
                                         <th scope="row">{{ $a->nama }}</th>
-                                        <td>{{ $a->nik }}</td>
-                                        <td>{{ $a->kk }}</td>
+                                        <td>{{ $nikArray[0].$nikArray[1].$nikArray[2]."xxxxxxxxxxxx" }}</td>
+                                        <td>{{ $kkArray[0].$kkArray[1].$kkArray[2]."xxxxxxxxxxxx" }}</td>
                                         <td>{{ $a->tmpLahir }}, {{ date('d/m/Y', strtotime($a->tglLahir)) }}</td>
                                         <td>@if ($a->jenis_kelamin == "1")
                                             Laki - laki

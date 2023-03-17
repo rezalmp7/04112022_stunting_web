@@ -29,7 +29,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h5 class="card-title mb-0 d-inline">List Pemeriksaan</h5>
-                                <a href="{{ url('/') }}/admin/pasien/create" class="btn btn-success btn-sm float-end"><i class=" ri-user-add-line"></i> Tambah Pasien</a>
+                                <a href="{{ url('/') }}/admin/pasien/create" class="btn btn-success btn-sm float-end"><i class=" ri-user-add-line"></i> Tambah Balita Posyandu</a>
                             </div>
                             <div class="card-body">
                                 <table id="example" class="table dt-responsive nowrap table-striped align-middle" style="width:100%">

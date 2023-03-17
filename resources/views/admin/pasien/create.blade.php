@@ -30,7 +30,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title mb-0">Tambah Pasien</h5>
+                                <h5 class="card-title mb-0">Tambah Balita Posyandu</h5>
                             </div>
                             <div class="card-body p-4">
                                 <form method="POST" action="{{ url('/') }}/admin/pasien/store">

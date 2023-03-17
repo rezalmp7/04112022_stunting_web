@@ -183,10 +183,7 @@
                     stroke: {
                         width: [0, 4]
                     },
-                    fill: {
-                        colors: ['#19e6a0']
-                    },
-                    colors: ['#19e6a0', "#FF1654"],
+                    colors: ['#1767ab', "#FF1654"],
                     title: {
                         text: 'Pemeriksaan Hari Ini'
                     },

@@ -95,7 +95,8 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title mb-0">Data Anak</h5>
+                                    <h5 class="card-title mb-0 d-inline">Data Anak</h5>
+                                    <a href="{{url('/')}}/admin/printDataAnakXsl" class="btn btn-success btn-sm float-end" target="_blank">Print Excel</a>
                                 </div>
                                 <div class="card-body">
                                     <table id="example" class="table dt-responsive nowrap table-striped align-middle" style="width:100%">

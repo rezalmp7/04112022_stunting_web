@@ -24,7 +24,7 @@
                             Data Stunting
                         </h2>
                         <div>
-                            <canvas class="col-12" id="myChart"></canvas>
+                             <div id="chart" data-colors='["--vz-primary", "--vz-success"]' class="apex-charts" dir="ltr"></div>
                         </div>
                     </div>
                 </div>
@@ -62,33 +62,54 @@
             </script>
         @endforeach
         <script>
-            const ctx = document.getElementById('myChart');
-
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: tanggal,
-                    datasets: [{
-                        label: 'Data Pemeriksaan',
-                        data: data1,
-                        fill: true,
-                        borderColor: 'rgb(75, 192, 192)',
-                        tension: 0.1
-                    },{
-                        label: 'Stunting',
-                        data: data2,
-                        fill: true,
-                        borderColor: 'rgb(255, 0, 0)',
-                        tension: 0.1
-                    }]
-                },
-                options: {
-                scales: {
-                    y: {
-                    beginAtZero: true
+            var options = {
+                series: [
+                    {
+                        name: 'Anak Periksa',
+                        type: 'column',
+                        data: data1
+                    }, {
+                        name: 'Anak Stunting',
+                        type: 'line',
+                        data: data2
                     }
-                }
-                }
-            });
+                ],
+                chart: {
+                    height: 350,
+                    type: 'line',
+                },
+                stroke: {
+                    width: [0, 4]
+                },
+                colors: ['#1767ab', "#FF1654"],
+                title: {
+                    text: 'Pemeriksaan Hari Ini'
+                },
+                dataLabels: {
+                    enabled: true,
+                    enabledOnSeries: [1]
+                },
+                    labels: tanggal,
+                xaxis: {
+                    type: 'datetime'
+                },
+                yaxis: [
+                    {
+                        title: {
+                            text: 'Pasien Periksa',
+                        },
+                        
+                        }, {
+                        opposite: true,
+                        title: {
+                            text: 'Pasien Kurang Gizi'
+                        }
+                    }
+                ]
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+        
         </script>
 @endsection

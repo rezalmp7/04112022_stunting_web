@@ -43,6 +43,11 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- apexcharts -->
+    <script src="{{url('/')}}/assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- mixed charts init -->
+    <script src="{{url('/')}}/assets/js/pages/apexcharts-mixed.init.js"></script>
+
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar-example">

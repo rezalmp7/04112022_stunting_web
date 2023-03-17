@@ -43,6 +43,7 @@ Route::get('/pencarian/{id}/detail', [PencarianController::class, 'show']);
 
 Route::middleware(['loginAdmin'])->group(function () {
     Route::resource('admin/dashboard', DashboardController::class);
+    Route::get('admin/printDataAnakXsl', [DashboardController::class, 'printDataAnakXsl']);
     Route::resource('admin/admin', AdminController::class);
     Route::post('admin/admin/store', [AdminController::class, 'store']);
     Route::post('admin/admin/update/{id}', [AdminController::class, 'update']);

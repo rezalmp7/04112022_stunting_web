@@ -35,7 +35,7 @@
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                        <p class="fw-medium text-muted mb-0">Pasien Hari Ini</p>
+                                                        <p class="fw-medium text-muted mb-0">Posyandu Hari Ini</p>
                                                         <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="{{ $countPemeriksaan }}">0</span></h2>
                                                     </div>
                                                     <div>
@@ -55,7 +55,7 @@
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between">
                                                     <div>
-                                                        <p class="fw-medium text-muted mb-0">Anak Stunting Hari Ini</p>
+                                                        <p class="fw-medium text-muted mb-0">Balita Stunting</p>
                                                         <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="{{ $countPemeriksaanKurangSehat }}">0</span></h2>
                                                     </div>
                                                     <div>
@@ -183,6 +183,10 @@
                     stroke: {
                         width: [0, 4]
                     },
+                    fill: {
+                        colors: ['#19e6a0']
+                    },
+                    colors: ['#19e6a0', "#FF1654"],
                     title: {
                         text: 'Pemeriksaan Hari Ini'
                     },

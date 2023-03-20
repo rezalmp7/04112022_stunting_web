@@ -106,7 +106,8 @@ class DashboardController extends Controller
         header('Content-Type: application/vnd.ms-excel');
         header('Content-Disposition: attachment;filename="Data karyawan.xlsx"');
         header('Cache-Control: max-age=0');
-        ob_end_clean();
+        // $writer = IOFactory::createWriter($spreadsheet,'Xlsx');
+        // ob_end_clean();
         $writer->save('php://output');
         // return $writer->save('Data karyawan.xlsx');
         // echo "<script>window.location = 'Data karyawan.xlsx'</script>";
